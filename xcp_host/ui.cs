@@ -43,6 +43,8 @@ namespace xcp_host
                 PCANBasic.PCAN_USBBUS8,
             };
 
+            this.SetupDataGridView();
+
             this.btn_HwRefresh_Click(this, new EventArgs());
         }
 
@@ -239,6 +241,54 @@ namespace xcp_host
         }
         #endregion
 
+        #region RichTextBox Handlers
+        private void rtb_download_value_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            bool handled = this.ValidateKeyPressForHex(e.KeyChar);
+            if (e.KeyChar == ' ')
+            {
+                handled = false;
+            }
+            e.Handled = handled;
+        }
+
+        #endregion
+
+        #region DataGridView Handlers
+
+        private void SetupDataGridView()
+        {
+            DataGridViewComboBoxColumn varType = new DataGridViewComboBoxColumn();
+            varType.Name = "TYPE";
+            varType.Width = 100;
+            varType.Items.Add("uint8_t");
+            varType.Items.Add("int8_t");
+            varType.Items.Add("uint16_t");
+            varType.Items.Add("int16_t");
+            varType.Items.Add("uint32_t");
+            varType.Items.Add("int32_t");
+            varType.Items.Add("float");
+
+            DataGridViewTextBoxColumn varName = new DataGridViewTextBoxColumn();
+            varName.Name = "NAME";
+            varName.Width = 200;
+
+            DataGridViewTextBoxColumn varAddr = new DataGridViewTextBoxColumn();
+            varAddr.Name = "ADDRESS";
+            varAddr.Width = 100;
+
+            DataGridViewTextBoxColumn varValue = new DataGridViewTextBoxColumn();
+            varValue.Name = "VALUE";
+            varValue.Width = 100;
+
+            this.dataGridView_variables.Columns.Add(varType);
+            this.dataGridView_variables.Columns.Add(varName);
+            this.dataGridView_variables.Columns.Add(varAddr);
+            this.dataGridView_variables.Columns.Add(varValue);
+        }
+
+        #endregion
+
         #endregion // Method
 
         private void ui_FormClosing(object sender, FormClosingEventArgs e)
@@ -249,13 +299,11 @@ namespace xcp_host
             }
         }
 
-        private void rtb_download_value_KeyPress(object sender, KeyPressEventArgs e)
+        private void button_add_var_Click(object sender, EventArgs e)
         {
-            bool handled = this.ValidateKeyPressForHex(e.KeyChar);
-            if(e.KeyChar == ' ') {
-                handled = false;
-            }
-            e.Handled = handled;
+            FormAddVar addVarEntryForm = new FormAddVar();
+            addVarEntryForm.ShowDialog();
+            MessageBox.Show(addVarEntryForm.varType);
         }
     }
 

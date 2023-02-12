@@ -61,12 +61,16 @@ namespace xcp_host
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_upload_addr = new System.Windows.Forms.TextBox();
             this.textBox_upload_count = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage_variable_test = new System.Windows.Forms.TabPage();
+            this.button_add_var = new System.Windows.Forms.Button();
+            this.dataGridView_variables = new System.Windows.Forms.DataGridView();
             this.groupBox_Connection.SuspendLayout();
             this.tabControl_main.SuspendLayout();
             this.tabPage_upload_download.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage_variable_test.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_variables)).BeginInit();
             this.SuspendLayout();
             // 
             // cbb_channel
@@ -266,7 +270,7 @@ namespace xcp_host
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl_main.Controls.Add(this.tabPage_upload_download);
-            this.tabControl_main.Controls.Add(this.tabPage2);
+            this.tabControl_main.Controls.Add(this.tabPage_variable_test);
             this.tabControl_main.Enabled = false;
             this.tabControl_main.Location = new System.Drawing.Point(12, 190);
             this.tabControl_main.Name = "tabControl_main";
@@ -419,15 +423,39 @@ namespace xcp_host
             this.textBox_upload_count.TabIndex = 48;
             this.textBox_upload_count.Text = "14";
             // 
-            // tabPage2
+            // tabPage_variable_test
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(670, 490);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage_variable_test.Controls.Add(this.button_add_var);
+            this.tabPage_variable_test.Controls.Add(this.dataGridView_variables);
+            this.tabPage_variable_test.Location = new System.Drawing.Point(4, 22);
+            this.tabPage_variable_test.Name = "tabPage_variable_test";
+            this.tabPage_variable_test.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_variable_test.Size = new System.Drawing.Size(670, 490);
+            this.tabPage_variable_test.TabIndex = 1;
+            this.tabPage_variable_test.Text = "Variable Test";
+            this.tabPage_variable_test.UseVisualStyleBackColor = true;
+            // 
+            // button_add_var
+            // 
+            this.button_add_var.Location = new System.Drawing.Point(328, 19);
+            this.button_add_var.Name = "button_add_var";
+            this.button_add_var.Size = new System.Drawing.Size(75, 23);
+            this.button_add_var.TabIndex = 1;
+            this.button_add_var.Text = "add";
+            this.button_add_var.UseVisualStyleBackColor = true;
+            this.button_add_var.Click += new System.EventHandler(this.button_add_var_Click);
+            // 
+            // dataGridView_variables
+            // 
+            this.dataGridView_variables.AllowUserToDeleteRows = false;
+            this.dataGridView_variables.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView_variables.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_variables.Location = new System.Drawing.Point(13, 53);
+            this.dataGridView_variables.Name = "dataGridView_variables";
+            this.dataGridView_variables.Size = new System.Drawing.Size(643, 419);
+            this.dataGridView_variables.TabIndex = 0;
             // 
             // ui
             // 
@@ -447,6 +475,8 @@ namespace xcp_host
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage_variable_test.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_variables)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -474,7 +504,7 @@ namespace xcp_host
         private System.Windows.Forms.Label label_comm_resource;
         private System.Windows.Forms.TabControl tabControl_main;
         private System.Windows.Forms.TabPage tabPage_upload_download;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage_variable_test;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_upload_addr;
@@ -487,6 +517,8 @@ namespace xcp_host
         private System.Windows.Forms.Button button_write;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox_download_addr;
+        private System.Windows.Forms.DataGridView dataGridView_variables;
+        private System.Windows.Forms.Button button_add_var;
     }
 }
 
