@@ -27,6 +27,7 @@ namespace xcp_host
         private ApplXcp m_xcp;
 
         private OdtEntryPlotPoint[] plotList;
+        private UInt32 prevTick;
 
         #region Method
         public ui()
@@ -36,6 +37,7 @@ namespace xcp_host
             this.m_xcp = new ApplXcp();
 
             this.plotList = null;
+            this.prevTick = 0;
 
             this.m_HandlesArray = new TPCANHandle[] 
             {
@@ -1128,6 +1130,12 @@ namespace xcp_host
                                             }
                                         }
                                         idx += GetTypeSize(node.varType);
+                                        if(prevTick >= tick) {
+                                            /* Clear on roll-over to keep UI plot refresh decent */
+                                            for (int j = 0; j < this.plotList.Length; j++) {
+                                                this.plotList[j].Clear();
+                                            }
+                                        }
                                         node.UpdateTick(tick);
                                     } else if (typeof(OdtEntryTreeNode) == odtNode.Nodes[i].GetType()) {
                                         /* OdtEntry */
@@ -1177,7 +1185,10 @@ namespace xcp_host
                         var timestamp = this.plotList[i].GetX();
                         var value = this.plotList[i].GetY();
                         if ( timestamp.Length > 0 ) {
-                            this.formsPlot_daq.Plot.AddScatter(timestamp, value);
+                            string plotLabel = this.plotList[i].odtEntry.varName;
+                            this.formsPlot_daq.Plot.AddScatter(timestamp, value, label: plotLabel);
+                            this.formsPlot_daq.Plot.Legend(location: ScottPlot.Alignment.UpperLeft);
+                            this.formsPlot_daq.Plot.XLabel("time, second");
                             this.formsPlot_daq.Refresh();
                         }
                     }
@@ -1203,6 +1214,13 @@ namespace xcp_host
                         this.plotList[i].Add(e.timestamp, e.value);
                     }
                 }
+            }
+        }
+
+        private void button_plotClear_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < this.plotList.Length; i++) {
+                this.plotList[i].Clear();
             }
         }
     }

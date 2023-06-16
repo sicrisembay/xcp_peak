@@ -71,32 +71,33 @@ namespace xcp_host
             this.dataGridView_varWrite = new System.Windows.Forms.DataGridView();
             this.dataGridView_varRead = new System.Windows.Forms.DataGridView();
             this.tabPage_daq_test = new System.Windows.Forms.TabPage();
-            this.button_daqClear = new System.Windows.Forms.Button();
-            this.button_startDaq = new System.Windows.Forms.Button();
-            this.comboBox_eventChannel = new System.Windows.Forms.ComboBox();
-            this.button_removeEntry = new System.Windows.Forms.Button();
-            this.button_saveDaq = new System.Windows.Forms.Button();
-            this.button_configDaq = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.comboBox_varType = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.textBox_odtEntryAddr = new System.Windows.Forms.TextBox();
+            this.button_removeEntry = new System.Windows.Forms.Button();
             this.textBox_odtEntryName = new System.Windows.Forms.TextBox();
             this.button_addEntry = new System.Windows.Forms.Button();
+            this.button_startDaq = new System.Windows.Forms.Button();
+            this.button_daqClear = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button_configDaq = new System.Windows.Forms.Button();
+            this.comboBox_eventChannel = new System.Windows.Forms.ComboBox();
             this.button_AddOdt = new System.Windows.Forms.Button();
             this.button_addDaq = new System.Windows.Forms.Button();
+            this.button_saveDaq = new System.Windows.Forms.Button();
             this.treeView_Daq = new System.Windows.Forms.TreeView();
             this.tabPage_daqPlot_test = new System.Windows.Forms.TabPage();
+            this.button_plotClear = new System.Windows.Forms.Button();
             this.checkBox_plotEnable = new System.Windows.Forms.CheckBox();
             this.button_addPlot = new System.Windows.Forms.Button();
             this.comboBox_odtEntry = new System.Windows.Forms.ComboBox();
             this.formsPlot_daq = new ScottPlot.FormsPlot();
             this.timer_dtoPoll = new System.Windows.Forms.Timer(this.components);
             this.timer_displayRefresh = new System.Windows.Forms.Timer(this.components);
-            this.label7 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox_Connection.SuspendLayout();
             this.tabControl_main.SuspendLayout();
             this.tabPage_upload_download.SuspendLayout();
@@ -106,9 +107,9 @@ namespace xcp_host
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_varWrite)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_varRead)).BeginInit();
             this.tabPage_daq_test.SuspendLayout();
-            this.tabPage_daqPlot_test.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.tabPage_daqPlot_test.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbb_channel
@@ -311,7 +312,6 @@ namespace xcp_host
             this.tabControl_main.Controls.Add(this.tabPage_variable_test);
             this.tabControl_main.Controls.Add(this.tabPage_daq_test);
             this.tabControl_main.Controls.Add(this.tabPage_daqPlot_test);
-            this.tabControl_main.Enabled = false;
             this.tabControl_main.Location = new System.Drawing.Point(12, 190);
             this.tabControl_main.Name = "tabControl_main";
             this.tabControl_main.SelectedIndex = 0;
@@ -560,33 +560,82 @@ namespace xcp_host
             this.tabPage_daq_test.Text = "DAQ Test";
             this.tabPage_daq_test.UseVisualStyleBackColor = true;
             // 
-            // button_daqClear
+            // groupBox4
             // 
-            this.button_daqClear.Location = new System.Drawing.Point(197, 55);
-            this.button_daqClear.Name = "button_daqClear";
-            this.button_daqClear.Size = new System.Drawing.Size(71, 35);
-            this.button_daqClear.TabIndex = 4;
-            this.button_daqClear.Text = "Clear All";
-            this.button_daqClear.UseVisualStyleBackColor = true;
-            this.button_daqClear.Click += new System.EventHandler(this.button_daqClear_Click);
+            this.groupBox4.Controls.Add(this.groupBox3);
+            this.groupBox4.Controls.Add(this.button_startDaq);
+            this.groupBox4.Controls.Add(this.button_daqClear);
+            this.groupBox4.Controls.Add(this.label7);
+            this.groupBox4.Controls.Add(this.button_configDaq);
+            this.groupBox4.Controls.Add(this.comboBox_eventChannel);
+            this.groupBox4.Controls.Add(this.button_AddOdt);
+            this.groupBox4.Controls.Add(this.button_addDaq);
+            this.groupBox4.Location = new System.Drawing.Point(333, 21);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(319, 286);
+            this.groupBox4.TabIndex = 14;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "groupBox4";
             // 
-            // button_startDaq
+            // groupBox3
             // 
-            this.button_startDaq.Location = new System.Drawing.Point(145, 232);
-            this.button_startDaq.Name = "button_startDaq";
-            this.button_startDaq.Size = new System.Drawing.Size(96, 38);
-            this.button_startDaq.TabIndex = 10;
-            this.button_startDaq.Text = "Start";
-            this.button_startDaq.UseVisualStyleBackColor = true;
-            this.button_startDaq.Click += new System.EventHandler(this.button_startDaq_Click);
+            this.groupBox3.Controls.Add(this.comboBox_varType);
+            this.groupBox3.Controls.Add(this.label12);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.label10);
+            this.groupBox3.Controls.Add(this.textBox_odtEntryAddr);
+            this.groupBox3.Controls.Add(this.button_removeEntry);
+            this.groupBox3.Controls.Add(this.textBox_odtEntryName);
+            this.groupBox3.Controls.Add(this.button_addEntry);
+            this.groupBox3.Location = new System.Drawing.Point(17, 106);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(283, 115);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "ODT Entry";
             // 
-            // comboBox_eventChannel
+            // comboBox_varType
             // 
-            this.comboBox_eventChannel.FormattingEnabled = true;
-            this.comboBox_eventChannel.Location = new System.Drawing.Point(66, 28);
-            this.comboBox_eventChannel.Name = "comboBox_eventChannel";
-            this.comboBox_eventChannel.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_eventChannel.TabIndex = 1;
+            this.comboBox_varType.FormattingEnabled = true;
+            this.comboBox_varType.Location = new System.Drawing.Point(71, 71);
+            this.comboBox_varType.Name = "comboBox_varType";
+            this.comboBox_varType.Size = new System.Drawing.Size(77, 21);
+            this.comboBox_varType.TabIndex = 7;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(34, 74);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 13);
+            this.label12.TabIndex = 12;
+            this.label12.Text = "Type:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(20, 50);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(48, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Address:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(30, 26);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(38, 13);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Name:";
+            // 
+            // textBox_odtEntryAddr
+            // 
+            this.textBox_odtEntryAddr.Location = new System.Drawing.Point(71, 47);
+            this.textBox_odtEntryAddr.Name = "textBox_odtEntryAddr";
+            this.textBox_odtEntryAddr.Size = new System.Drawing.Size(77, 20);
+            this.textBox_odtEntryAddr.TabIndex = 6;
+            this.textBox_odtEntryAddr.Text = "00000000";
             // 
             // button_removeEntry
             // 
@@ -597,42 +646,6 @@ namespace xcp_host
             this.button_removeEntry.Text = "Remove Entry";
             this.button_removeEntry.UseVisualStyleBackColor = true;
             this.button_removeEntry.Click += new System.EventHandler(this.button_removeEntry_Click);
-            // 
-            // button_saveDaq
-            // 
-            this.button_saveDaq.Location = new System.Drawing.Point(501, 375);
-            this.button_saveDaq.Name = "button_saveDaq";
-            this.button_saveDaq.Size = new System.Drawing.Size(89, 38);
-            this.button_saveDaq.TabIndex = 7;
-            this.button_saveDaq.Text = "Save";
-            this.button_saveDaq.UseVisualStyleBackColor = true;
-            this.button_saveDaq.Click += new System.EventHandler(this.button_saveDaq_Click);
-            // 
-            // button_configDaq
-            // 
-            this.button_configDaq.Location = new System.Drawing.Point(43, 232);
-            this.button_configDaq.Name = "button_configDaq";
-            this.button_configDaq.Size = new System.Drawing.Size(96, 38);
-            this.button_configDaq.TabIndex = 6;
-            this.button_configDaq.Text = "Configure Slave";
-            this.button_configDaq.UseVisualStyleBackColor = true;
-            this.button_configDaq.Click += new System.EventHandler(this.button_configDaq_Click);
-            // 
-            // comboBox_varType
-            // 
-            this.comboBox_varType.FormattingEnabled = true;
-            this.comboBox_varType.Location = new System.Drawing.Point(71, 71);
-            this.comboBox_varType.Name = "comboBox_varType";
-            this.comboBox_varType.Size = new System.Drawing.Size(77, 21);
-            this.comboBox_varType.TabIndex = 7;
-            // 
-            // textBox_odtEntryAddr
-            // 
-            this.textBox_odtEntryAddr.Location = new System.Drawing.Point(71, 47);
-            this.textBox_odtEntryAddr.Name = "textBox_odtEntryAddr";
-            this.textBox_odtEntryAddr.Size = new System.Drawing.Size(77, 20);
-            this.textBox_odtEntryAddr.TabIndex = 6;
-            this.textBox_odtEntryAddr.Text = "00000000";
             // 
             // textBox_odtEntryName
             // 
@@ -651,6 +664,53 @@ namespace xcp_host
             this.button_addEntry.Text = "Add Entry";
             this.button_addEntry.UseVisualStyleBackColor = true;
             this.button_addEntry.Click += new System.EventHandler(this.button_addEntry_Click);
+            // 
+            // button_startDaq
+            // 
+            this.button_startDaq.Location = new System.Drawing.Point(145, 232);
+            this.button_startDaq.Name = "button_startDaq";
+            this.button_startDaq.Size = new System.Drawing.Size(96, 38);
+            this.button_startDaq.TabIndex = 10;
+            this.button_startDaq.Text = "Start";
+            this.button_startDaq.UseVisualStyleBackColor = true;
+            this.button_startDaq.Click += new System.EventHandler(this.button_startDaq_Click);
+            // 
+            // button_daqClear
+            // 
+            this.button_daqClear.Location = new System.Drawing.Point(197, 55);
+            this.button_daqClear.Name = "button_daqClear";
+            this.button_daqClear.Size = new System.Drawing.Size(71, 35);
+            this.button_daqClear.TabIndex = 4;
+            this.button_daqClear.Text = "Clear All";
+            this.button_daqClear.UseVisualStyleBackColor = true;
+            this.button_daqClear.Click += new System.EventHandler(this.button_daqClear_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(26, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Event:";
+            // 
+            // button_configDaq
+            // 
+            this.button_configDaq.Location = new System.Drawing.Point(43, 232);
+            this.button_configDaq.Name = "button_configDaq";
+            this.button_configDaq.Size = new System.Drawing.Size(96, 38);
+            this.button_configDaq.TabIndex = 6;
+            this.button_configDaq.Text = "Configure Slave";
+            this.button_configDaq.UseVisualStyleBackColor = true;
+            this.button_configDaq.Click += new System.EventHandler(this.button_configDaq_Click);
+            // 
+            // comboBox_eventChannel
+            // 
+            this.comboBox_eventChannel.FormattingEnabled = true;
+            this.comboBox_eventChannel.Location = new System.Drawing.Point(66, 28);
+            this.comboBox_eventChannel.Name = "comboBox_eventChannel";
+            this.comboBox_eventChannel.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_eventChannel.TabIndex = 1;
             // 
             // button_AddOdt
             // 
@@ -672,6 +732,16 @@ namespace xcp_host
             this.button_addDaq.UseVisualStyleBackColor = true;
             this.button_addDaq.Click += new System.EventHandler(this.button_addDaq_Click);
             // 
+            // button_saveDaq
+            // 
+            this.button_saveDaq.Location = new System.Drawing.Point(501, 375);
+            this.button_saveDaq.Name = "button_saveDaq";
+            this.button_saveDaq.Size = new System.Drawing.Size(89, 38);
+            this.button_saveDaq.TabIndex = 7;
+            this.button_saveDaq.Text = "Save";
+            this.button_saveDaq.UseVisualStyleBackColor = true;
+            this.button_saveDaq.Click += new System.EventHandler(this.button_saveDaq_Click);
+            // 
             // treeView_Daq
             // 
             this.treeView_Daq.Location = new System.Drawing.Point(26, 21);
@@ -681,6 +751,7 @@ namespace xcp_host
             // 
             // tabPage_daqPlot_test
             // 
+            this.tabPage_daqPlot_test.Controls.Add(this.button_plotClear);
             this.tabPage_daqPlot_test.Controls.Add(this.checkBox_plotEnable);
             this.tabPage_daqPlot_test.Controls.Add(this.button_addPlot);
             this.tabPage_daqPlot_test.Controls.Add(this.comboBox_odtEntry);
@@ -692,14 +763,24 @@ namespace xcp_host
             this.tabPage_daqPlot_test.Text = "Plot Test";
             this.tabPage_daqPlot_test.UseVisualStyleBackColor = true;
             // 
+            // button_plotClear
+            // 
+            this.button_plotClear.Location = new System.Drawing.Point(235, 407);
+            this.button_plotClear.Name = "button_plotClear";
+            this.button_plotClear.Size = new System.Drawing.Size(97, 32);
+            this.button_plotClear.TabIndex = 4;
+            this.button_plotClear.Text = "Clear";
+            this.button_plotClear.UseVisualStyleBackColor = true;
+            this.button_plotClear.Click += new System.EventHandler(this.button_plotClear_Click);
+            // 
             // checkBox_plotEnable
             // 
             this.checkBox_plotEnable.AutoSize = true;
             this.checkBox_plotEnable.Location = new System.Drawing.Point(86, 411);
             this.checkBox_plotEnable.Name = "checkBox_plotEnable";
-            this.checkBox_plotEnable.Size = new System.Drawing.Size(59, 17);
+            this.checkBox_plotEnable.Size = new System.Drawing.Size(61, 17);
             this.checkBox_plotEnable.TabIndex = 3;
-            this.checkBox_plotEnable.Text = "Enable";
+            this.checkBox_plotEnable.Text = "Update";
             this.checkBox_plotEnable.UseVisualStyleBackColor = true;
             // 
             // button_addPlot
@@ -735,78 +816,8 @@ namespace xcp_host
             // timer_displayRefresh
             // 
             this.timer_displayRefresh.Enabled = true;
-            this.timer_displayRefresh.Interval = 200;
+            this.timer_displayRefresh.Interval = 1000;
             this.timer_displayRefresh.Tick += new System.EventHandler(this.timer_displayRefresh_Tick);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "Event:";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.comboBox_varType);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.textBox_odtEntryAddr);
-            this.groupBox3.Controls.Add(this.button_removeEntry);
-            this.groupBox3.Controls.Add(this.textBox_odtEntryName);
-            this.groupBox3.Controls.Add(this.button_addEntry);
-            this.groupBox3.Location = new System.Drawing.Point(17, 106);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(283, 115);
-            this.groupBox3.TabIndex = 13;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "ODT Entry";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(30, 26);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(38, 13);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Name:";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 50);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(48, 13);
-            this.label11.TabIndex = 12;
-            this.label11.Text = "Address:";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(34, 74);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(34, 13);
-            this.label12.TabIndex = 12;
-            this.label12.Text = "Type:";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.groupBox3);
-            this.groupBox4.Controls.Add(this.button_startDaq);
-            this.groupBox4.Controls.Add(this.button_daqClear);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.button_configDaq);
-            this.groupBox4.Controls.Add(this.comboBox_eventChannel);
-            this.groupBox4.Controls.Add(this.button_AddOdt);
-            this.groupBox4.Controls.Add(this.button_addDaq);
-            this.groupBox4.Location = new System.Drawing.Point(333, 21);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(319, 286);
-            this.groupBox4.TabIndex = 14;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
             // 
             // ui
             // 
@@ -830,12 +841,12 @@ namespace xcp_host
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_varWrite)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_varRead)).EndInit();
             this.tabPage_daq_test.ResumeLayout(false);
-            this.tabPage_daqPlot_test.ResumeLayout(false);
-            this.tabPage_daqPlot_test.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.tabPage_daqPlot_test.ResumeLayout(false);
+            this.tabPage_daqPlot_test.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -910,6 +921,7 @@ namespace xcp_host
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button_plotClear;
     }
 }
 
